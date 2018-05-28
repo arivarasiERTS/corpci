@@ -1,0 +1,8 @@
+{
+  "name": "corpci",
+  "app_id": "",
+  "type": "ionic-angular",
+  "integrations": {
+    "cordova": {}
+  }
+}
