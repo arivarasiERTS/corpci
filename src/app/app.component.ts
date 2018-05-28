@@ -4,7 +4,29 @@ import { StatusBar } from '@ionic-native/status-bar';
 import { SplashScreen } from '@ionic-native/splash-screen';
 
 import { HomePage } from '../pages/home/home';
-import { ListPage } from '../pages/list/list';
+import { LoginPage } from '../pages/login/login';
+import { SignupPage } from '../pages/signup/signup';
+import { MaincontentPage } from '../pages/maincontent/maincontent';
+import { MaincontentgPage } from '../pages/maincontentg/maincontentg';
+import { PasswordresetPage } from '../pages/passwordreset/passwordreset';
+import { GuestinfoPage } from '../pages/guestinfo/guestinfo';
+import { UserreqPage } from '../pages/userreq/userreq';
+import { AboutcPage } from '../pages/aboutc/aboutc';
+import { ContactPage } from '../pages/contact/contact';
+import { FaqsPage } from '../pages/faqs/faqs';
+import { RateaPage } from '../pages/ratea/ratea';
+import { RatesPage } from '../pages/rates/rates';
+//import { SmileRate } from './smile-rate';
+//import { SmileRateModule } from '../../components/smile-rate';
+//import { ReactiveFormsModule } from '@angular/forms';
+//import { FormControl, FormGroup, Validators } from '@angular/forms';
+//import { AuthProvider } from '../providers/auth';
+import firebase from 'firebase';
+import { firebaseConfig } from './credentials';
+//import { AngularFireModule } from 'angularfire2';
+//import { AngularFireDatabaseModule } from 'angularfire2/database';
+//import { AngularFireAuth } from 'angularfire2/auth';
+import { Unsubscribe } from '@firebase/util';
 
 @Component({
   templateUrl: 'app.html'
@@ -12,20 +34,37 @@ import { ListPage } from '../pages/list/list';
 export class MyApp {
   @ViewChild(Nav) nav: Nav;
 
-  rootPage: any = HomePage;
+  
+
+  rootPage: any;
 
   pages: Array<{title: string, component: any}>;
 
   constructor(public platform: Platform, public statusBar: StatusBar, public splashScreen: SplashScreen) {
-    this.initializeApp();
-
+    firebase.initializeApp(firebaseConfig);
     // used for an example of ngFor and navigation
     this.pages = [
-      { title: 'Home', component: HomePage },
-      { title: 'List', component: ListPage }
+    { title: 'Home', component: HomePage},
+    { title: 'About Corpcare IT Solutions', component: AboutcPage},
+      { title: 'FAQs', component: FaqsPage},
+    { title: 'Contact Us', component: ContactPage},
+      { title: 'Rate Our Service', component: RatesPage},
+      { title: 'Rate this App', component: RateaPage}
     ];
 
+    const unsubscribe: Unsubscribe = firebase.auth().onAuthStateChanged(user => {
+      if (user) {
+        this.rootPage = HomePage;
+        unsubscribe();
+      } else {
+        this.rootPage = 'LoginPage';
+        unsubscribe();
+      }
+    });
   }
+
+
+
 
   initializeApp() {
     this.platform.ready().then(() => {
