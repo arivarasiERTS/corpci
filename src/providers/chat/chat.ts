@@ -9,25 +9,37 @@ import firebase from 'firebase';
 */
 @Injectable()
 export class ChatProvider {
-  firedata = firebase.database().ref('/messages');
-
+  firedata = firebase.database().ref('/requests');
+selected;
+reqmsg;
+nameg;
+phoneg;
+selg;
+msgg;
   constructor() {  
   }
 
-addsel(sel){
+
+
+proceed(sel,msg)
+{
   firebase.database()
-  .ref(`/userProfile/${firebase.auth().currentUser.uid}/sel`)
-  .set(sel);
+  .ref(`/userProfile/${firebase.auth().currentUser.uid}/requests`)
+  .push({selected: sel,request: msg});
+  firebase.database()
+  .ref(`/requests`)
+  .push({user: firebase.auth().currentUser.uid, selected: sel, request: msg});
 }
 
-
-addmsg(msg){
+proceedg(name,phone,sel,msg)
+{
   firebase.database()
-  .ref(`/userProfile/${firebase.auth().currentUser.uid}/msg`)
-  .set(msg);
+  .ref(`/guests`)
+  .push({nameg: name, phoneg: phone, selg: sel,msgg: msg});
+  firebase.database()
+  .ref(`/requests`)
+  .push({user: name, phoneg: phone, selected: sel, request: msg});
 }
-
-
 
 
 }

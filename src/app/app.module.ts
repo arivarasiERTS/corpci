@@ -16,6 +16,7 @@ import { ContactPage } from '../pages/contact/contact';
 import { FaqsPage } from '../pages/faqs/faqs';
 import { RateaPage } from '../pages/ratea/ratea';
 import { RatesPage } from '../pages/rates/rates';
+import { ThankyouPage } from '../pages/thankyou/thankyou';
 import { StatusBar } from '@ionic-native/status-bar';
 import { SplashScreen } from '@ionic-native/splash-screen';
 //import { AuthProvider } from '../providers/auth';
@@ -42,7 +43,7 @@ import { ChatProvider } from '../providers/chat/chat';
     MaincontentPage,
     FaqsPage,
     RatesPage,
-    RateaPage
+    RateaPage,
   ],
   imports: [
     BrowserModule,

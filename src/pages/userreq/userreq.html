@@ -19,11 +19,10 @@
 <ion-list  no-lines>
   <ion-item *ngFor = "let item of users; let i - index" text-wrap>
     <div>
-      Requests
-      {{item.name}}
-      {{item.phone}}
-      {{item.message}}
-    </div>
+      The requested brand :
+      {{item.selected}} and the issue is
+      {{item.request}}
+       </div>
   </ion-item>
 </ion-list>
 </div>

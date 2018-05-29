@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { IonicPage, NavController, NavParams, ToastController} from 'ionic-angular';
+import { IonicPage, NavController, NavParams, LoadingController,Alert,AlertController} from 'ionic-angular';
 //import { AngularFireAuth} from 'angularfire2/auth';
 //import { AngularFireDatabase} from 'angularfire2/database';
 import firebase from 'firebase';
@@ -22,7 +22,7 @@ export class MaincontentPage {
 lap;
 newmessage;
 
-  constructor(public navCtrl: NavController, public navParams: NavParams, public chatservice: ChatProvider) {
+  constructor(public navCtrl: NavController, public navParams: NavParams, public alertCtrl: AlertController, public loadingCtrl: LoadingController, public chatservice: ChatProvider) {
 
   }
 
@@ -31,10 +31,22 @@ newmessage;
   }
 
   picked(lap: string){
-    this.chatservice.addsel(this.lap);
+    this.lap = lap;
   }
   userReq(newmessage: string){
-    this.chatservice.addmsg(this.newmessage);
+    let loader=this.loadingCtrl.create({
+      content: 'Sending'
+    });
+    loader.present();
+    this.newmessage = newmessage;
+    this.chatservice.proceed(this.lap,this.newmessage);
+    loader.dismiss();
+    const alert: Alert = this.alertCtrl.create({
+      message: "Your request is sent successfully. We will contact you soon.",
+      buttons: [{ text: 'Ok', role: 'cancel' }]
+    });
+    alert.present();
+    this.navCtrl.push('ThankyouPage');
   }
 
 userReqdis(){
