@@ -29,7 +29,7 @@ import firebase from 'firebase';
 //import { ChatProvider } from '../providers/chat/chat';
 import { AuthProvider } from '../providers/auth/auth';
 import { ChatProvider } from '../providers/chat/chat';
-
+import { ComponentsModule } from '../components/Components.module';
 //import { SmileRateComponent } from './smile-rate/smile-rate';
 //import { SmileRate } from './smile-rate';
 //import { SmileRateModule } from '../../components/smile-rate';
@@ -47,6 +47,7 @@ import { ChatProvider } from '../providers/chat/chat';
   ],
   imports: [
     BrowserModule,
+    ComponentsModule,
   //  ReactiveFormsModule,
     IonicModule.forRoot(MyApp)
   ],

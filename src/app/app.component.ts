@@ -17,6 +17,7 @@ import { FaqsPage } from '../pages/faqs/faqs';
 import { RateaPage } from '../pages/ratea/ratea';
 import { RatesPage } from '../pages/rates/rates';
 import { ThankyouPage } from '../pages/thankyou/thankyou';
+import { ComponentsModule } from '../components/Components.module';
 //import { SmileRate } from './smile-rate';
 //import { SmileRateModule } from '../../components/smile-rate';
 //import { ReactiveFormsModule } from '@angular/forms';

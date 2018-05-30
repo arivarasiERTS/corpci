@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams } from 'ionic-angular';
+import { SmilerateComponent } from '../../components/smilerate/smilerate';
 
 /**
  * Generated class for the RatesPage page.

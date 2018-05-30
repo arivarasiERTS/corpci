@@ -1,3 +1,21 @@
 page-rates {
 
+    .scroll-content {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        background-color: #1abc9c;
+    }
+
+    h4 {
+        text-align: center;
+        font-size: 1.2em;
+        color: #fff;
+    }	
+
+    smilerate {
+        margin-top: 50px;
+        margin-bottom: 50px;
+    }
 }
