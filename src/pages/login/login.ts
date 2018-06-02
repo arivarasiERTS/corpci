@@ -45,7 +45,7 @@ export class LoginPage {
   }
 
   goToResetPassword(): void {
-    this.navCtrl.push('ResetPasswordPage');
+    this.navCtrl.push('PasswordresetPage');
   }
 
   async loginUser(): Promise<void> {

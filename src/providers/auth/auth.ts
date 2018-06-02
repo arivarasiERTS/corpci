@@ -14,15 +14,15 @@ export class AuthProvider {
     try {
       const newUser: User = await firebase
         .auth()
-        .createUserWithEmailAndPassword(email, password);
+        .createUserWithEmailAndPassword(email,password);
 
       await firebase
         .database()
-        .ref(`/userProfile/${newUser.uid}/email`)
+        .ref(`/userProfile/${firebase.auth().currentUser.uid}/email`)
         .set(email);
-        firebase.database().ref(`/userProfile/${newUser.uid}/name`).set(name);
-        firebase.database().ref(`/userProfile/${newUser.uid}/place`).set(place);
-        firebase.database().ref(`/userProfile/${newUser.uid}/phone`).set(phone);
+        firebase.database().ref(`/userProfile/${firebase.auth().currentUser.uid}/name`).set(name);
+        firebase.database().ref(`/userProfile/${firebase.auth().currentUser.uid}/place`).set(place);
+        firebase.database().ref(`/userProfile/${firebase.auth().currentUser.uid}/phone`).set(phone);
       return newUser;
     } catch (error) {
       throw error;

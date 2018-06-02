@@ -5,7 +5,7 @@
   Ionic pages and navigation.
 -->
 <ion-header>
-  <ion-navbar hideBackButton = "true" color="danger">
+  <ion-navbar color="danger">
     <button ion-button menuToggle>
       <ion-icon name="menu"></ion-icon>
     </button>
@@ -15,5 +15,8 @@
 
 <ion-content padding>
   <h3>Thank you for choosing Corpcare IT Solutions</h3>
-
+   
 </ion-content>
+<ion-footer>
+    <button ion-button color="secondary" block icon-right (click)="openLogin()">Home<ion-icon name="home"></ion-icon></button>
+</ion-footer>

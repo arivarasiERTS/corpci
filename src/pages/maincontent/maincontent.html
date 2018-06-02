@@ -91,14 +91,18 @@
     </ion-list>
 
     <ion-list *ngSwitchCase="'Unknown'">
-</ion-list>
+</ion-list></div>
+<div>
       <ion-item>
        <ion-label floating>Write your issue</ion-label>
        <ion-input type="text" [(ngModel)]="newmessage" ></ion-input>
      </ion-item>
+    </div>
+    </ion-content>
+    
+     <ion-footer>
 <button ion-button block icon-right (click)="userReq(newmessage)">Submit<ion-icon name="log-in"></ion-icon></button>
 
-  </div>
+  <button ion-button block icon-right (click)="logoutUser()">Log Out<ion-icon name="log-out"></ion-icon></button>
 
-<button ion-button block icon-right (click)="logoutUser()">Log Out<ion-icon name="log-out"></ion-icon></button>
-</ion-content>
+</ion-footer>

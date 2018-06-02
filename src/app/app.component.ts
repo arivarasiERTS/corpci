@@ -18,16 +18,8 @@ import { RateaPage } from '../pages/ratea/ratea';
 import { RatesPage } from '../pages/rates/rates';
 import { ThankyouPage } from '../pages/thankyou/thankyou';
 import { ComponentsModule } from '../components/Components.module';
-//import { SmileRate } from './smile-rate';
-//import { SmileRateModule } from '../../components/smile-rate';
-//import { ReactiveFormsModule } from '@angular/forms';
-//import { FormControl, FormGroup, Validators } from '@angular/forms';
-//import { AuthProvider } from '../providers/auth';
 import firebase from 'firebase';
 import { firebaseConfig } from './credentials';
-//import { AngularFireModule } from 'angularfire2';
-//import { AngularFireDatabaseModule } from 'angularfire2/database';
-//import { AngularFireAuth } from 'angularfire2/auth';
 import { Unsubscribe } from '@firebase/util';
 
 @Component({

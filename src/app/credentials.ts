@@ -1,8 +1,12 @@
 export const firebaseConfig = {
-    apiKey: "AIzaSyAHwtZv-TcvfmpGmPpVEa1oEyWMyR9m0b4",
-    authDomain: "corpc-86603.firebaseapp.com",
-    databaseURL: "https://corpc-86603.firebaseio.com",
-    projectId: "corpc-86603",
-    storageBucket: "corpc-86603.appspot.com",
-    messagingSenderId: "474871595787"
+  apiKey: "AIzaSyDMCM9RQdY1PkscL5t6NgBaWeoaLT_u7zU",
+  authDomain: "corpcareitsolutions.firebaseapp.com",
+  databaseURL: "https://corpcareitsolutions.firebaseio.com",
+  projectId: "corpcareitsolutions",
+  storageBucket: "corpcareitsolutions.appspot.com",
+  messagingSenderId: "698477895883"
   };
+
+
+
+  

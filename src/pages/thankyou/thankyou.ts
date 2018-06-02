@@ -18,6 +18,10 @@ export class ThankyouPage {
   constructor(public navCtrl: NavController, public navParams: NavParams) {
   }
 
+  openLogin(){
+    this.navCtrl.push('LoginPage');
+  }
+
   ionViewDidLoad() {
     console.log('ionViewDidLoad ThankyouPage');
   }

@@ -5,7 +5,7 @@
   Ionic pages and navigation.
 -->
 <ion-header>
-  <ion-navbar hideBackButton = "true" color="danger">
+  <ion-navbar color="danger">
     <button ion-button menuToggle>
       <ion-icon name="menu"></ion-icon>
     </button>
@@ -17,8 +17,8 @@
 
 	<h4>How does this make you feel?</h4>
 
-	<smilerate></smilerate>
+  <smilerate></smilerate>
 
-	<button ion-button color="light">Let us know!</button>
+	<button ion-button color="light" (click)="rates()">Let us know!</button>
 
 </ion-content>

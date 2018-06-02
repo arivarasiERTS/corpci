@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
-import { IonicPage, NavController, NavParams } from 'ionic-angular';
+import { IonicPage, NavController, NavParams,Alert,AlertController} from 'ionic-angular';
 import { SmilerateComponent } from '../../components/smilerate/smilerate';
+import {ChatProvider} from '../../providers/chat/chat';
 
 /**
  * Generated class for the RatesPage page.
@@ -14,13 +15,27 @@ import { SmilerateComponent } from '../../components/smilerate/smilerate';
   selector: 'page-rates',
   templateUrl: 'rates.html',
 })
+
 export class RatesPage {
-
-  constructor(public navCtrl: NavController, public navParams: NavParams) {
+rating: string;
+  constructor(public chatservice: ChatProvider, public navCtrl: NavController, public navParams: NavParams, public alertCtrl: AlertController) {
   }
-
+  changeRating(event)
+  {
+     this.rating=event.value;
+  }
+rates(){
+//this.chatservice.ratings(this.rating);
+const alert: Alert = this.alertCtrl.create({
+  message: "Thank you for rating",
+  buttons: [{ text: 'Ok', role: 'cancel' }]
+});
+alert.present();
+this.navCtrl.push('ThankyouPage');
+}
   ionViewDidLoad() {
-    console.log('ionViewDidLoad RatesPage');
+    console.log(this.rating);
+  
   }
 
 }

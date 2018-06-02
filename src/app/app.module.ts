@@ -19,20 +19,12 @@ import { RatesPage } from '../pages/rates/rates';
 import { ThankyouPage } from '../pages/thankyou/thankyou';
 import { StatusBar } from '@ionic-native/status-bar';
 import { SplashScreen } from '@ionic-native/splash-screen';
-//import { AuthProvider } from '../providers/auth';
-//import { ReactiveFormsModule } from '@angular/forms';
-//import { FormControl, FormGroup, Validators } from '@angular/forms';
+
 import firebase from 'firebase';
-//import { AngularFireModule } from 'angularfire2';
-//import { AngularFireDatabaseModule } from 'angularfire2/database';
-//import { AngularFireAuthModule } from 'angularfire2/auth';
-//import { ChatProvider } from '../providers/chat/chat';
 import { AuthProvider } from '../providers/auth/auth';
 import { ChatProvider } from '../providers/chat/chat';
 import { ComponentsModule } from '../components/Components.module';
-//import { SmileRateComponent } from './smile-rate/smile-rate';
-//import { SmileRate } from './smile-rate';
-//import { SmileRateModule } from '../../components/smile-rate';
+
 
 @NgModule({
   declarations: [
@@ -48,7 +40,6 @@ import { ComponentsModule } from '../components/Components.module';
   imports: [
     BrowserModule,
     ComponentsModule,
-  //  ReactiveFormsModule,
     IonicModule.forRoot(MyApp)
   ],
   bootstrap: [IonicApp],
