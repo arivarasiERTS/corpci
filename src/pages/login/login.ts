@@ -5,7 +5,8 @@ import {
   IonicPage,
   Loading,
   LoadingController,
-  NavController
+  NavController,
+  MenuController
 } from 'ionic-angular';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { AuthProvider } from '../../providers/auth/auth';
@@ -22,12 +23,15 @@ import firebase from 'firebase/app';
 export class LoginPage {
   public loginForm: FormGroup;
   constructor(
+    public menuCtrl: MenuController,
     public navCtrl: NavController,
     public loadingCtrl: LoadingController,
     public alertCtrl: AlertController,
     public authProvider: AuthProvider,
     formBuilder: FormBuilder
   ) {
+    this.menuCtrl.enable(false, 'authenticated');
+    this.menuCtrl.enable(true, 'unauthenticated');
     this.loginForm = formBuilder.group({
       email: [
         '',

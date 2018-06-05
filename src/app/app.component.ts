@@ -1,5 +1,5 @@
 import { Component, ViewChild } from '@angular/core';
-import { Nav, Platform } from 'ionic-angular';
+import { Nav,Platform } from 'ionic-angular';
 import { StatusBar } from '@ionic-native/status-bar';
 import { SplashScreen } from '@ionic-native/splash-screen';
 
@@ -32,19 +32,19 @@ export class MyApp {
 
   rootPage: any;
 
-  pages: Array<{title: string, component: any}>;
+ // pages: Array<{title: string, component: any}>;
 
   constructor(public platform: Platform, public statusBar: StatusBar, public splashScreen: SplashScreen) {
     firebase.initializeApp(firebaseConfig);
     // used for an example of ngFor and navigation
-    this.pages = [
+    /*this.pages = [
     { title: 'Home', component: HomePage},
     { title: 'About Corpcare IT Solutions', component: AboutcPage},
       { title: 'FAQs', component: FaqsPage},
     { title: 'Contact Us', component: ContactPage},
       { title: 'Rate Our Service', component: RatesPage},
       { title: 'Rate this App', component: RateaPage}
-    ];
+    ];*/
 
     const unsubscribe: Unsubscribe = firebase.auth().onAuthStateChanged(user => {
       if (user) {
@@ -69,9 +69,39 @@ export class MyApp {
     });
   }
 
-  openPage(page) {
+  /*openPage(page) {
     // Reset the content nav to have just this page
     // we wouldn't want the back button to show in this scenario
     this.nav.setRoot(page.component);
+  }*/
+  opengPage(){
+    this.nav.push('MaincontentgPage');
   }
+  openurPage(){
+    this.nav.push('UserreqPage');
+  }
+  openaPage(){
+    this.nav.push('AboutcPage');
+  }
+  openfPage(){
+    this.nav.push('FaqsPage');
+  }
+  opencPage(){
+    this.nav.push('ContactPage');
+  }
+  openrsPage(){
+    this.nav.push('RatesPage');
+  }
+  openraPage(){
+    this.nav.push('RateaPage');
+  }
+
+
+  logoutUser(){
+    firebase.auth().signOut().then(() => {
+        this.nav.setRoot('LoginPage');
+      });
+    }
+
+
 }

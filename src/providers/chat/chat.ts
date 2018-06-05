@@ -9,7 +9,7 @@ import firebase from 'firebase';
 */
 @Injectable()
 export class ChatProvider {
-  firedata = firebase.database().ref('/requests');
+  firedata = firebase.database().ref('/userProfile');
 selected;
 reqmsg;
 nameg;
@@ -17,6 +17,8 @@ phoneg;
 selg;
 msgg;
 rating;
+
+
   constructor() {  
   }
 
@@ -24,6 +26,7 @@ rating;
 
 proceed(sel,msg)
 {
+ 
   firebase.database()
   .ref(`/userProfile/${firebase.auth().currentUser.uid}/requests`)
   .push({selected: sel,request: msg, requestedtime: firebase.database.ServerValue.TIMESTAMP});

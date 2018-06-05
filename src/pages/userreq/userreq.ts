@@ -29,7 +29,7 @@ constructor(public navCtrl: NavController, public navParams: NavParams, public c
 }
 ionViewDidLoad() {
   this.users = [];
-  //var userId = firebase.auth().currentUser.uid;
+ // var userId = firebase.auth().currentUser.uid;
   let temp;
   const personRef: firebase.database.Reference = firebase.database().ref(`/userProfile/${firebase.auth().currentUser.uid}/requests`);
   personRef.once('value', personSnapshot => {

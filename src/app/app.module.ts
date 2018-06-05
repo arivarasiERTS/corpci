@@ -30,12 +30,7 @@ import { ComponentsModule } from '../components/Components.module';
   declarations: [
     MyApp,
     HomePage,
-    AboutcPage,
-    ContactPage,
-    MaincontentPage,
-    FaqsPage,
-    RatesPage,
-    RateaPage,
+    MaincontentPage
   ],
   imports: [
     BrowserModule,
@@ -46,12 +41,7 @@ import { ComponentsModule } from '../components/Components.module';
   entryComponents: [
     MyApp,
     HomePage,
-    AboutcPage,
-    ContactPage,
-    MaincontentPage,
-    FaqsPage,
-    RatesPage,
-    RateaPage
+    MaincontentPage
   ],
   providers: [
     StatusBar,

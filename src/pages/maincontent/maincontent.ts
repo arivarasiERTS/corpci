@@ -1,7 +1,6 @@
 import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams, LoadingController,Alert,AlertController} from 'ionic-angular';
-//import { AngularFireAuth} from 'angularfire2/auth';
-//import { AngularFireDatabase} from 'angularfire2/database';
+import { MenuController } from 'ionic-angular';
 import firebase from 'firebase';
 import { AuthProvider } from '../../providers/auth/auth';
 import {ChatProvider} from '../../providers/chat/chat';
@@ -22,8 +21,9 @@ export class MaincontentPage {
 lap;
 newmessage;
 
-  constructor(public navCtrl: NavController, public navParams: NavParams, public alertCtrl: AlertController, public loadingCtrl: LoadingController, public chatservice: ChatProvider) {
-
+  constructor(public menuCtrl: MenuController, public navCtrl: NavController, public navParams: NavParams, public alertCtrl: AlertController, public loadingCtrl: LoadingController, public chatservice: ChatProvider) {
+    this.menuCtrl.enable(true, 'authenticated');
+    this.menuCtrl.enable(false, 'unauthenticated');
   }
 
   ionViewDidLoad() {
@@ -57,4 +57,6 @@ userReqdis(){
       this.navCtrl.setRoot('LoginPage');
     });
       }
+
+
 }

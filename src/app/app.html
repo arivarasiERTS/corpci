@@ -1,4 +1,4 @@
-<ion-menu [content]="content">
+<ion-menu id="unauthenticated" [content]="mycontent">
   <ion-header>
     <ion-toolbar>
       <ion-title secondary>Menu</ion-title>
@@ -7,13 +7,64 @@
 
   <ion-content>
     <ion-list>
-      <button menuClose ion-item *ngFor="let p of pages" (click)="openPage(p)">
-            {{p.title}}
+      <button ion-item (click)="opengPage()" menuClose>
+        Continue as Guest 
       </button>
+      <button ion-item (click)="openaPage()" menuClose>
+        About Us
+      </button>
+      <button ion-item (click)="openfPage()" menuClose>
+        FAQS
+      </button>
+      <button ion-item (click)="opencPage()" menuClose>
+        Contact Us
+        </button>
+        <button ion-item (click)="openrsPage()" menuClose>
+        Rate Our Service
+        </button>
+        <button ion-item (click)="openraPage()" menuClose>
+        Rate this App
+        </button>
+
+    </ion-list>
+  </ion-content>
+
+</ion-menu>
+<ion-menu id="authenticated" [content]="mycontent">
+  <ion-header>
+    <ion-toolbar>
+      <ion-title secondary>Menu</ion-title>
+    </ion-toolbar>
+  </ion-header>
+
+  <ion-content>
+    <ion-list>
+        <button ion-item (click)="openurPage()" menuClose>
+            My Requests
+          </button>
+          <button ion-item (click)="openaPage()" menuClose>
+            About Us
+          </button>
+          <button ion-item (click)="openfPage()" menuClose>
+            FAQS
+          </button>
+          <button ion-item (click)="opencPage()" menuClose>
+            Contact Us
+            </button>
+            <button ion-item (click)="openrsPage()" menuClose>
+            Rate Our Service
+            </button>
+            <button ion-item (click)="openraPage()" menuClose>
+            Rate this App
+            </button>
+            <button ion-item (click)="logoutUser()" menuClose>
+             Log Out
+                </button>
+
     </ion-list>
   </ion-content>
 
 </ion-menu>
 
 <!-- Disable swipe-to-go-back because it's poor UX to combine STGB with side menus -->
-<ion-nav [root]="rootPage" #content swipeBackEnabled="false"></ion-nav>
+<ion-nav [root]="rootPage" #mycontent swipeBackEnabled="false"></ion-nav>
