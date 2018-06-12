@@ -78,7 +78,6 @@ export class SmilerateComponent {
 		this.rating = Math.round(100 - ((250 - this.smileHeight) / 2));
 
 		this.redraw();
-
 	}
 
 }

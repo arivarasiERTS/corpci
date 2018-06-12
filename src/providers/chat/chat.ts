@@ -20,20 +20,26 @@ rating;
 
 
   constructor() {  
+ 
   }
 
 
 
 proceed(sel,msg)
 {
- 
+  var userId = firebase.auth().currentUser.uid;
+  return firebase.database().ref('/userProfile/' + userId).once('value').then(function(snapshot) {
+    var username = (snapshot.val().name);
+    var userphone = (snapshot.val().phone);
   firebase.database()
   .ref(`/userProfile/${firebase.auth().currentUser.uid}/requests`)
   .push({selected: sel,request: msg, requestedtime: firebase.database.ServerValue.TIMESTAMP});
   firebase.database()
   .ref(`/requests`)
-  .push({user: firebase.auth().currentUser.uid, selected: sel, request: msg, requestedtime: firebase.database.ServerValue.TIMESTAMP});
+  .push({user: username, selected: sel, request: msg, phone:userphone, requestedtime: firebase.database.ServerValue.TIMESTAMP});
+});
 }
+
 
 proceedg(name,phone,sel,msg)
 {
@@ -42,7 +48,7 @@ proceedg(name,phone,sel,msg)
   .push({nameg: name, phoneg: phone, selg: sel,msgg: msg, requestedtime: firebase.database.ServerValue.TIMESTAMP});
   firebase.database()
   .ref(`/requests`)
-  .push({user: name, phoneg: phone, selected: sel, request: msg, requestedtime: firebase.database.ServerValue.TIMESTAMP});
+  .push({user: name, phone: phone, selected: sel, request: msg, requestedtime: firebase.database.ServerValue.TIMESTAMP});
 }
 
 ratings(rating)

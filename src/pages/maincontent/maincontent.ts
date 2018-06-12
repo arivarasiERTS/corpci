@@ -27,7 +27,6 @@ newmessage;
   }
 
   ionViewDidLoad() {
-    //console.log('ionViewDidLoad MaincontentPage');
   }
 
   picked(lap: string){
