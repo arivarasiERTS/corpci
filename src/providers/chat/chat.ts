@@ -1,5 +1,7 @@
 import { Injectable } from '@angular/core';
 import firebase from 'firebase';
+import { HttpClient } from '@angular/common/http/';
+import { HttpHeaders } from '@angular/common/http';
 
 /*
   Generated class for the ChatProvider provider.
@@ -19,7 +21,7 @@ msgg;
 rating;
 
 
-  constructor() {  
+  constructor(private http: HttpClient) {  
  
   }
 
@@ -56,6 +58,33 @@ ratings(rating)
   firebase.database()
   .ref(`/rating`)
   .push({rating: rating});
+  this.sendNotification();
+}
+
+//Add this function and call it where you want to send it.
+sendNotification() 
+{  
+let body = {
+    "notification":{
+      "title":"New Notification has arrived",
+      "body":"Notification Body",
+      "sound":"default",
+      "click_action":"FCM_PLUGIN_ACTIVITY",
+      "icon":"fcm_push_icon"
+    },
+    "data":{
+      "param1":"value1",
+      "param2":"value2"
+    },
+      "to":"/topics/all",
+      "priority":"high",
+      "restricted_package_name":""
+  }
+  let options = new HttpHeaders().set('Content-Type','application/json');
+  this.http.post("https://fcm.googleapis.com/fcm/send",body,{
+    headers: options.set('Authorization', 'key=BDKTl7YmovJjp1G5zT8xZ1lFSHUMuuA2TVGlFBFduyW1_T2G7DJnrMHqHyR11vXja7GB3wKyhpU50ddmi3Q3mCw'),
+  })
+    .subscribe();
 }
 
 }

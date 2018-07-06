@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams } from 'ionic-angular';
+import {ChatProvider} from '../../providers/chat/chat';
 
 /**
  * Generated class for the ThankyouPage page.
@@ -14,9 +15,12 @@ import { IonicPage, NavController, NavParams } from 'ionic-angular';
   templateUrl: 'thankyou.html',
 })
 export class ThankyouPage {
-
-  constructor(public navCtrl: NavController, public navParams: NavParams) {
+//rating: number;
+  constructor(public chatservice: ChatProvider, public navCtrl: NavController, public navParams: NavParams) {
+    //this.rating = navParams.get('data');
+   //this.chatservice.ratings(this.rating);
   }
+
 
   openLogin(){
     this.navCtrl.push('LoginPage');

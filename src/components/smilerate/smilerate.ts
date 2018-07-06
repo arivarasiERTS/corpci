@@ -1,5 +1,6 @@
 import { Component, ViewChild } from '@angular/core';
-
+import { NavController,NavParams,Alert,AlertController} from 'ionic-angular';
+import {ChatProvider} from '../../providers/chat/chat';
 @Component({
   selector: 'smilerate',
   templateUrl: 'smilerate.html'
@@ -11,7 +12,7 @@ export class SmilerateComponent {
 	smileHeight: number = 250;
 	rating: number = Math.round(100 - ((250 - this.smileHeight) / 2));
 
-	constructor() {
+	constructor(public chatservice: ChatProvider, public navCtrl: NavController,  public navParams: NavParams, public alertCtrl: AlertController) {
 
 	}
 
@@ -78,6 +79,18 @@ export class SmilerateComponent {
 		this.rating = Math.round(100 - ((250 - this.smileHeight) / 2));
 
 		this.redraw();
+	}
+
+	rated(rating){
+		this.rating = rating;
+		this.chatservice.ratings(this.rating);
+const alert: Alert = this.alertCtrl.create({
+	message: "Thanks for rating",
+	buttons: [{ text: 'Ok', role: 'cancel' }]
+  });
+  alert.present();
+  this.navCtrl.push('ThankyouPage');
+this.navCtrl.push('ThankyouPage',{data: this.rating});
 	}
 
 }

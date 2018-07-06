@@ -21,17 +21,7 @@ export class RatesPage {
   constructor(public chatservice: ChatProvider, public navCtrl: NavController, public navParams: NavParams, public alertCtrl: AlertController) {
   }
 
-    
-
-rates(){
-//this.chatservice.ratings(this.rating);
-const alert: Alert = this.alertCtrl.create({
-  message: "Thanks for rating",
-  buttons: [{ text: 'Ok', role: 'cancel' }]
-});
-alert.present();
-this.navCtrl.push('ThankyouPage');
-}
+  
   ionViewDidLoad() {
   
   }

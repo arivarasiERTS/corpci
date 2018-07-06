@@ -19,11 +19,14 @@ import { RatesPage } from '../pages/rates/rates';
 import { ThankyouPage } from '../pages/thankyou/thankyou';
 import { StatusBar } from '@ionic-native/status-bar';
 import { SplashScreen } from '@ionic-native/splash-screen';
+import { Geolocation } from '@ionic-native/geolocation';
 
 import firebase from 'firebase';
 import { AuthProvider } from '../providers/auth/auth';
 import { ChatProvider } from '../providers/chat/chat';
 import { ComponentsModule } from '../components/Components.module';
+import {HttpClientModule} from '@angular/common/http';
+import { AppRate } from '@ionic-native/app-rate';
 
 
 @NgModule({
@@ -34,6 +37,7 @@ import { ComponentsModule } from '../components/Components.module';
   ],
   imports: [
     BrowserModule,
+    HttpClientModule,
     ComponentsModule,
     IonicModule.forRoot(MyApp)
   ],
@@ -49,8 +53,8 @@ import { ComponentsModule } from '../components/Components.module';
     {provide: ErrorHandler, useClass: IonicErrorHandler},
     AuthProvider,
     ChatProvider,
-    AuthProvider,
-    ChatProvider
+    Geolocation,
+    AppRate
   ]
 })
 export class AppModule {}
