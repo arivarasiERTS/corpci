@@ -17,6 +17,7 @@ import { FaqsPage } from '../pages/faqs/faqs';
 import { RateaPage } from '../pages/ratea/ratea';
 import { RatesPage } from '../pages/rates/rates';
 import { ThankyouPage } from '../pages/thankyou/thankyou';
+import { ThankyougPage } from '../pages/thankyoug/thankyoug';
 import { StatusBar } from '@ionic-native/status-bar';
 import { SplashScreen } from '@ionic-native/splash-screen';
 import { Geolocation } from '@ionic-native/geolocation';

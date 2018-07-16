@@ -90,7 +90,7 @@ const alert: Alert = this.alertCtrl.create({
   });
   alert.present();
   this.navCtrl.push('ThankyouPage');
-this.navCtrl.push('ThankyouPage',{data: this.rating});
+//this.navCtrl.push('ThankyouPage',{data: this.rating});
 	}
 
 }

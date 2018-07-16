@@ -55,7 +55,7 @@ async guestUser(name: string, phone: string, newmessage: string){
         buttons: [{ text: 'Ok', role: 'cancel' }]
       });
       alert.present();
-      this.navCtrl.push('ThankyouPage');
+      this.navCtrl.push('ThankyougPage');
   //  })
   }
   catch(e){

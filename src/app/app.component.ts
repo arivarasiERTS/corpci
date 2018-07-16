@@ -17,6 +17,7 @@ import { FaqsPage } from '../pages/faqs/faqs';
 import { RateaPage } from '../pages/ratea/ratea';
 import { RatesPage } from '../pages/rates/rates';
 import { ThankyouPage } from '../pages/thankyou/thankyou';
+import { ThankyougPage } from '../pages/thankyoug/thankyoug';
 import { ComponentsModule } from '../components/Components.module';
 import firebase from 'firebase';
 import { firebaseConfig } from './credentials';

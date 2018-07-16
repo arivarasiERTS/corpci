@@ -22,8 +22,8 @@ export class ThankyouPage {
   }
 
 
-  openLogin(){
-    this.navCtrl.push('LoginPage');
+  openReq(){
+    this.navCtrl.push('UserreqPage');
   }
 
   ionViewDidLoad() {
