@@ -14,6 +14,13 @@
 </ion-header>
 
 <ion-content padding class="auth-page">
+  
+        
+            <div class="card-title"><h1>
+    Welcome to Corpcare IT Solutions</h1></div>
+    <ion-card>   
+        <ion-card-content>
+   
   <form [formGroup]="loginForm" (submit)="loginUser()" novalidate>
     <ion-item [class.invalid]="!loginForm.controls.email.valid && loginForm.controls.email.touched"
       [class.valid]="loginForm.controls.email.valid && loginForm.controls.email.touched">
@@ -37,16 +44,23 @@
       <p>Your password needs more than 6 characters.</p>
     </ion-item>
 
-    <button ion-button block type="submit" [disabled]="!loginForm.valid">
+    <button ion-button block color="danger" type="submit" [disabled]="!loginForm.valid">
       Log In
     </button>
   </form>
-
-  <button ion-button block clear (click)="goToSignup()">
+</ion-card-content>
+</ion-card>
+  <button ion-button block color="danger" clear (click)="goToSignup()">
     Create a new account
   </button>
 
-  <button ion-button block clear (click)="goToResetPassword()">
+  <button ion-button block color="danger" clear (click)="goToResetPassword()">
     I forgot my password :(
   </button>
+
 </ion-content>
+<ion-footer>
+  <ion-card>
+    <button ion-button block color="danger" icon-right (click)="openMainContent()">Continue as Guest<ion-icon name="arrow-dropright"></ion-icon></button>
+  </ion-card>
+  </ion-footer>

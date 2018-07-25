@@ -13,10 +13,10 @@
   </ion-navbar>
 </ion-header>
 
-<ion-content padding>
+<ion-content>
 
-  <div padding>
-        <h3>Welcome...Please select the category</h3>
+  <div class ="card-title">
+        <h3>Please select the category</h3>
     <ion-segment [(ngModel)]="service" color="danger">
       <ion-segment-button value="Laptop">
         Laptop
@@ -37,7 +37,7 @@
     <ion-list *ngSwitchCase="'Laptop'">
       <ion-item>
 
-        <ion-label>Select brand</ion-label>
+        <ion-label color ="danger">Select brand</ion-label>
         <ion-select [(ngModel)]="lap" (ionChange) = "picked(lap)">
           <ion-option value="b1">b1</ion-option>
           <ion-option value="b2">b2</ion-option>
@@ -55,7 +55,7 @@
 
     <ion-list *ngSwitchCase="'Desktop'">
       <ion-item>
-        <ion-label>Select brand</ion-label>
+        <ion-label color ="danger">Select brand</ion-label>
         <ion-select [(ngModel)]="lap"  (ionChange) = "picked(lap)">
           <ion-option value="b11">b11</ion-option>
           <ion-option value="b12">b12</ion-option>
@@ -72,7 +72,7 @@
     </ion-list>
     <ion-list *ngSwitchCase="'Hardware/Software'">
       <ion-item>
-        <ion-label>Select brand</ion-label>
+        <ion-label color ="danger">Select brand</ion-label>
         <ion-select [(ngModel)]="lap"  (ionChange) = "picked(lap)">
           <ion-option value="b111">b111</ion-option>
           <ion-option value="b112">b112</ion-option>
@@ -94,6 +94,8 @@
   </div>
  </ion-content>
  <ion-footer>
- <button ion-button block icon-right (click)="getUserDetails()">Proceed<ion-icon name="log-out"></ion-icon></button>
+   <ion-card>
+ <button ion-button block  color= "danger" icon-right (click)="getUserDetails()">Proceed<ion-icon name="done-all"></ion-icon></button>
+</ion-card>
 </ion-footer>
 

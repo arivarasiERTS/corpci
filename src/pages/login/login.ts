@@ -51,6 +51,9 @@ export class LoginPage {
   goToResetPassword(): void {
     this.navCtrl.push('PasswordresetPage');
   }
+  openMainContent() {
+    this.navCtrl.push('MaincontentgPage');
+  }
 
   async loginUser(): Promise<void> {
     if (!this.loginForm.valid) {

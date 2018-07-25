@@ -89,7 +89,7 @@ const alert: Alert = this.alertCtrl.create({
 	buttons: [{ text: 'Ok', role: 'cancel' }]
   });
   alert.present();
-  this.navCtrl.push('ThankyouPage');
+  this.navCtrl.push('ThankyougPage');
 //this.navCtrl.push('ThankyouPage',{data: this.rating});
 	}
 
