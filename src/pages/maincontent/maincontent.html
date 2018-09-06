@@ -15,9 +15,9 @@
 
 <ion-content>
 <div>
-   <button ion-button block icon-right (click)="userReqdis()">My Requests<ion-icon name="log-in"></ion-icon></button>
+   <button ion-button color="Secondary" block icon-right (click)="userReqdis()">My Requests<ion-icon name="log-in"></ion-icon></button>
  </div>
- <div class ="card-title">
+ <div>
         <h3>Please select the category</h3>
     <ion-segment [(ngModel)]="service" color="danger">
       <ion-segment-button value="Laptop">
@@ -26,11 +26,11 @@
       <ion-segment-button value="Desktop">
         Desktop
       </ion-segment-button>
-      <ion-segment-button value="Hardware/Software" text-wrap>
-        Hardware/Software
+      <ion-segment-button value="Hardware" text-wrap>
+        Hardware
       </ion-segment-button>
-      <ion-segment-button value="Unknown">
-        Unknown
+      <ion-segment-button value="Software">
+        Software
       </ion-segment-button>
     </ion-segment>
   </div>
@@ -39,58 +39,63 @@
     <ion-list *ngSwitchCase="'Laptop'">
       <ion-item>
 
-        <ion-label color ="danger">Select brand</ion-label>
+        <ion-label>Select brand</ion-label>
         <ion-select [(ngModel)]="lap" (ionChange) = "picked(lap)">
-          <ion-option value="b1">b1</ion-option>
-          <ion-option value="b2">b2</ion-option>
-          <ion-option value="b3">b3</ion-option>
-          <ion-option value="b4">b4</ion-option>
-          <ion-option value="b5">b5</ion-option>
-          <ion-option value="b6">b6</ion-option>
-          <ion-option value="b7">b7</ion-option>
-          <ion-option value="b8">b8</ion-option>
-          <ion-option value="b9">b9</ion-option>
-          <ion-option value="b10">b10</ion-option>
+            <ion-option value="Acer Lap">Acer</ion-option>
+            <ion-option value="Apple Lap">Apple</ion-option>
+            <ion-option value="Asus Lap">Asus</ion-option>
+            <ion-option value="Dell Lap">Dell</ion-option>
+            <ion-option value="HP Lap">HP</ion-option>
+            <ion-option value="Lenovo Lap">Lenovo</ion-option>
+            <ion-option text-wrap value="Panasonic Lap">Panasonic</ion-option>
+            <ion-option  text-wrap value="LG Lap">LG</ion-option>         
+            <ion-option value="Samsung Lap">Samsung</ion-option> 
+            <ion-option text-wrap value="Sony Lap">Sony</ion-option>  
+            <ion-option value="Toshiba Lap">Toshiba</ion-option>
+            <ion-option value="Other laptop">Other</ion-option>
         </ion-select>
       </ion-item>
     </ion-list>
 
     <ion-list *ngSwitchCase="'Desktop'">
       <ion-item>
-        <ion-label color ="danger">Select brand</ion-label>
+        <ion-label>Select brand</ion-label>
         <ion-select [(ngModel)]="lap"  (ionChange) = "picked(lap)">
-          <ion-option value="b11">b11</ion-option>
-          <ion-option value="b12">b12</ion-option>
-          <ion-option value="b13">b13</ion-option>
-          <ion-option value="b14">b14</ion-option>
-          <ion-option value="b15">b15</ion-option>
-          <ion-option value="b16">b16</ion-option>
-          <ion-option value="b17">b17</ion-option>
-          <ion-option value="b18">b18</ion-option>
-          <ion-option value="b19">b19</ion-option>
-          <ion-option value="b20">b20</ion-option>
+            <ion-option value="Acer Desk">Acer</ion-option>
+          <ion-option value="Asus Desk">Asus</ion-option>
+          <ion-option value="Dell Desk">Dell</ion-option>
+          <ion-option value="Hcl Desk">Hcl</ion-option>
+          <ion-option value="HP Desk">HP</ion-option>
+          <ion-option value="Lenovo Desk">Lenovo</ion-option>
+          <ion-option value="Sony Desk">Sony</ion-option>
+          <ion-option value="Other Desktop">Other</ion-option> 
         </ion-select>
           </ion-item>
     </ion-list>
-    <ion-list *ngSwitchCase="'Hardware/Software'">
+    <ion-list *ngSwitchCase="'Hardware'">
       <ion-item>
-        <ion-label color ="danger">Select brand</ion-label>
+        <ion-label>Select Problem</ion-label>
         <ion-select [(ngModel)]="lap"  (ionChange) = "picked(lap)">
-          <ion-option value="b111">b111</ion-option>
-          <ion-option value="b112">b112</ion-option>
-          <ion-option value="b113">b113</ion-option>
-          <ion-option value="b114">b114</ion-option>
-          <ion-option value="b115">b115</ion-option>
-          <ion-option value="b116">b116</ion-option>
-          <ion-option value="b117">b117</ion-option>
-          <ion-option value="b118">b118</ion-option>
-          <ion-option value="b119">b119</ion-option>
-          <ion-option value="b120">b120</ion-option>
+          <ion-option value="Ram Upgrades">Ram Upgrades</ion-option>
+          <ion-option value="Motherboard">Motherboard Repairing</ion-option>
+          <ion-option value="Formatting">Formatting</ion-option>
+          <ion-option value="Printer">Printer Repair</ion-option>
+          <ion-option value="Other Hardware">Other</ion-option>
         </ion-select>
       </ion-item>
     </ion-list>
 
-    <ion-list *ngSwitchCase="'Unknown'">
+    <ion-list *ngSwitchCase="'Software'">
+        <ion-item text-wrap>
+            <ion-label>Select Problem</ion-label>
+            <ion-select [(ngModel)]="lap"  (ionChange) = "picked(lap)">
+                <ion-option value="OS installation">OS installation</ion-option>
+                <ion-option value="Software Update">Software Update</ion-option>
+                <ion-option value="Virus Issue">Virus Issue</ion-option>
+                <ion-option value="Data Recovery">Data Recovery</ion-option>
+                <ion-option value="Other Software">Other</ion-option>
+            </ion-select>
+          </ion-item>
 </ion-list></div>
 <div>
       <ion-item>

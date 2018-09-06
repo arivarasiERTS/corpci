@@ -51,6 +51,7 @@ proceedg(name,phone,sel,msg)
   firebase.database()
   .ref(`/requests`)
   .push({user: name, phone: phone, selected: sel, request: msg, requestedtime: firebase.database.ServerValue.TIMESTAMP});
+  this.sendNotification();
 }
 
 ratings(rating)
@@ -82,7 +83,7 @@ let body = {
   }
   let options = new HttpHeaders().set('Content-Type','application/json');
   this.http.post("https://fcm.googleapis.com/fcm/send",body,{
-    headers: options.set('Authorization', 'key=BDKTl7YmovJjp1G5zT8xZ1lFSHUMuuA2TVGlFBFduyW1_T2G7DJnrMHqHyR11vXja7GB3wKyhpU50ddmi3Q3mCw'),
+    headers: options.set('Authorization', 'key=AAAAoqCG4Ms:APA91bHQ_RDEV9UgzRysA8bo76RjlvKqs7TQ-j1BDLKfgE6G1fNqsSbYIFbOQ4psZtOTzTedGQBPVgNcAY8tstY093DttxKugh9ETaAUg5Zf24YND09KnJ0-WyNLJzPY1roMXL4M68P2'),
   })
     .subscribe();
 }
